@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container } from "react-bootstrap";
+import { Router } from "@reach/router";
+import LogReg from "./views/LogReg";
+import Welcome from "./views/Welcome";
+// import UserMain from "./views/UserMain";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <Router>
+          {/* <UserMain path="/user" /> */}
+          <Welcome path="/" />
+          <LogReg path="/login" />
+        </Router>
+      </Container>
     </div>
   );
 }
