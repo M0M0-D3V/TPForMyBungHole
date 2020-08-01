@@ -43,8 +43,9 @@ export default (props) => {
             value={username}
             placeholder="username"
           />
-          <br />
+
           <input
+            style={{ marginTop: "10px" }}
             className="form-control"
             type="password"
             name="username"
@@ -52,7 +53,15 @@ export default (props) => {
             value={password}
             placeholder="password"
           />
-          <Button type="submit" className="btn-sm btn-outline-dark">
+          <Button
+            style={{
+              marginTop: "10px",
+              backgroundColor: "#8ACB88",
+              color: "#ffffff",
+            }}
+            type="submit"
+            className="form-control btn-sm btn-outline-dark btn-block"
+          >
             Sign In
           </Button>
           <p className="error-message">{errorMessage ? errorMessage : ""}</p>

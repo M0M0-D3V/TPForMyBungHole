@@ -9,12 +9,13 @@ export default () => {
       {/* need to fix LoggedUser to flag if logged in... */}
       {/* <LoggedUser /> */}
 
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">Got TP?</Navbar.Brand>
-        <Button variant="outline-secondary" href="/login">
-          Need an account? Register here!
-        </Button>
-      </Navbar>
+      <Button
+        variant="outline-secondary"
+        href="/login"
+        style={{ marginBottom: "20px", color: "#648381" }}
+      >
+        Need an account? Register here!
+      </Button>
       <h2>I AM CORNHOLIO!</h2>
       <img
         src={cornholio}
@@ -31,10 +32,10 @@ export default () => {
 
         <Button
           variant="outline-secondary"
-          href="/user"
-          style={{ marginTop: "20px" }}
+          href="/"
+          style={{ marginTop: "20px", color: "#648381" }}
         >
-          Enter as Guest
+          Continue as Guest
         </Button>
       </p>
     </div>

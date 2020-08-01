@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import { navigate } from "@reach/router";
 
 export default (props) => {
   const [username, setUsername] = useState("");
@@ -28,6 +29,7 @@ export default (props) => {
         setEmail("");
         setPassword("");
         setConfirmPassword("");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err, "this is error");
