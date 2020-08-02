@@ -61,11 +61,11 @@ export default (props) => {
       <legend>Register</legend>
 
       <form onSubmit={register}>
-        <label>Username:</label>
         <input
           className="form-control"
           type="text"
           name="username"
+          placeholder="username"
           onChange={nameChange}
           value={username}
           required
@@ -76,11 +76,11 @@ export default (props) => {
           ""
         )}
 
-        <label>Email:</label>
         <input
           className="form-control"
           type="email"
           name="email"
+          placeholder="email"
           onChange={emailChange}
           value={email}
           required
@@ -91,11 +91,11 @@ export default (props) => {
           ""
         )}
 
-        <label>Password:</label>
         <input
           className="form-control"
           type="password"
           name="password"
+          placeholder="password"
           onChange={passwordChange}
           value={password}
           required
@@ -106,11 +106,11 @@ export default (props) => {
           ""
         )}
 
-        <label>Confirm Password:</label>
         <input
           className="form-control"
           type="password"
           name="confirmPassword"
+          placeholder="confirm password"
           onChange={(e) => setConfirmPassword(e.target.value)}
           value={confirmPassword}
           required
@@ -123,7 +123,11 @@ export default (props) => {
           ""
         )}
 
-        <Button type="submit" className="btn-sm btn-dark">
+        <Button
+          type="submit"
+          className="btn-sm btn-dark btn-block"
+          style={{ marginTop: "10px" }}
+        >
           Sign Up
         </Button>
       </form>

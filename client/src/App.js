@@ -1,9 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Router } from "@reach/router";
+import { Redirect, Router } from "@reach/router";
 import LogReg from "./views/LogReg";
 import Welcome from "./views/Welcome";
 import UserMain from "./views/UserMain";
+import LoggedUser from "./components/LoggedUser";
 
 function App() {
   return (
