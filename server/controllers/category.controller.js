@@ -3,6 +3,7 @@ const Category = require("../models/category.model");
 module.exports = {
   // CREATE: Create one Category
   create(req, res) {
+    console.log("hello i am alive.. here i make the stuff");
     Category.create(req.body)
       .then((category) => res.json(category))
       .catch((err) => res.status(400).json(err));
@@ -10,7 +11,7 @@ module.exports = {
 
   // READ: Get all Authors
   getAll(req, res) {
-    console.log("hello i am alive");
+    console.log("hello i am alive.. here i give you the stuffs");
     // Blank .find param gets all
     Category.find()
       .then((allCats) => res.json({ categories: allCats }))
@@ -18,6 +19,7 @@ module.exports = {
   },
   // READ: Get one Category by id
   getOne(req, res) {
+    console.log("hello i am alive.. here i give you the one thing");
     Category.findById({ _id: req.params.id })
       .then((category) => res.json(category))
       .catch((err) => res.status(400).json(err));
@@ -25,6 +27,7 @@ module.exports = {
 
   // UPDATE: Update one Category by id, re-running validators on any changed fields
   update(req, res) {
+    console.log("hello i am alive.. here i update the one thing");
     Category.findByIdAndUpdate(req.params.id, req.body, {
       runValidators: true,
       new: true,
@@ -35,6 +38,7 @@ module.exports = {
 
   // DESTROY: Delete one Category by id
   delete(req, res) {
+    console.log("hello i am alive.. here i delete the one thing");
     Category.findByIdAndDelete(req.params.id)
       .then((deletedCat) => res.json(deletedCat))
       .catch((err) => res.status(400).json(err));

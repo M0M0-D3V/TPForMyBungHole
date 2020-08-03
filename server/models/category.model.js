@@ -10,7 +10,6 @@ const CategorySchema = new mongoose.Schema({
         product: {
           type: String,
           minlength: [3, "product name at least 3 characters"],
-          brandname: String,
           productprice: {
             type: Number,
             get: (v) => Math.round(v * 100) / 100,
