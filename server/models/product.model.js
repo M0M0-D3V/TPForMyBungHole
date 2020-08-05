@@ -16,7 +16,16 @@ const ProductSchema = new mongoose.Schema(
       get: (v) => Math.floor(v),
       set: (v) => Math.floor(v),
     },
+    purchasehistory: [PurchaseHistorySchema],
     onSale: Boolean,
+  },
+  { timestamps: true }
+);
+
+const PurchaseHistorySchema = new mongoose.Schema(
+  {
+    date: Date,
+    purchasedBy: [UserSchema],
   },
   { timestamps: true }
 );

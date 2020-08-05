@@ -21,7 +21,12 @@ const UserSchema = new mongoose.Schema(
       required: [true, "Password is required"],
       minlength: [8, "Password must be 8 characters or longer"],
     },
-    categories: [CategorySchema],
+    categories: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+      },
+    ],
   },
   { timestamps: true }
 );
