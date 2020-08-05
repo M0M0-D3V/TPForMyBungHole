@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
 
-const CategorySchema = new mongoose.Schema(
+const PurchaseHistorySchema = new mongoose.Schema(
   {
-    // Schema for Category to list onto the UserMain page so that user can find an existing category or create a new one
-    category: {
-      type: String,
-      required: [true, "category name is required"],
-      minlength: [3, "category must be at least 3 characters"],
+    date: Date,
+    purchasedBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    product: [ProductSchema],
   },
   { timestamps: true }
 );
@@ -35,13 +33,15 @@ const ProductSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const PurchaseHistorySchema = new mongoose.Schema(
+const CategorySchema = new mongoose.Schema(
   {
-    date: Date,
-    purchasedBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+    // Schema for Category to list onto the UserMain page so that user can find an existing category or create a new one
+    category: {
+      type: String,
+      required: [true, "category name is required"],
+      minlength: [3, "category must be at least 3 characters"],
     },
+    product: [ProductSchema],
   },
   { timestamps: true }
 );
