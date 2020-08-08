@@ -62,6 +62,4 @@ UserSchema.pre("save", function (next) {
 // applying plugin to validate uniqueness
 UserSchema.plugin(uniqueValidator);
 
-const User = mongoose.model("User", UserSchema);
-
-module.exports = User;
+module.exports.User = mongoose.model("User", UserSchema);

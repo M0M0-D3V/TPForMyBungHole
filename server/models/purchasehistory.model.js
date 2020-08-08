@@ -12,9 +12,7 @@ const PurchaseHistorySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const PurchaseHistory = mongoose.model(
+module.exports.PurchaseHistory = mongoose.model(
   "PurchaseHistory",
   PurchaseHistorySchema
 );
-
-module.exports = PurchaseHistory;

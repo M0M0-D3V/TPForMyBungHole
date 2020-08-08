@@ -9,6 +9,7 @@ const ProductSchema = new mongoose.Schema(
     },
     productprice: {
       type: Number,
+      onSale: Boolean,
       get: (v) => Math.round(v * 100) / 100,
       set: (v) => Math.round(v * 100) / 100,
     },
@@ -24,11 +25,8 @@ const ProductSchema = new mongoose.Schema(
         price: this.productprice,
       },
     ],
-    onSale: Boolean,
   },
   { timestamps: true }
 );
 
-const Product = mongoose.model("Product", ProductSchema);
-
-module.exports = Product;
+module.exports.Product = mongoose.model("Product", ProductSchema);
