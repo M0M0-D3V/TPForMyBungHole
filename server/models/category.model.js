@@ -8,13 +8,13 @@ const CategorySchema = new mongoose.Schema(
       type: String,
       required: [true, "category name is required"],
       minlength: [3, "category must be at least 3 characters"],
+      products: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Product",
+        },
+      ],
     },
-    product: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
   },
   { timestamps: true }
 );

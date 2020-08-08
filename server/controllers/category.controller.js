@@ -1,17 +1,29 @@
-const Category = require("../models/category.model");
+const { Category } = require("../models/category.model");
+const { Product } = require("../models/product.model");
+const { User } = require("../models/user.model");
 
 module.exports = {
   // CREATE: Create one Category
+  // create(req, res) {
+  //   Category.create(req.body)
+  //     .then((category) => res.json(category))
+  //     .catch((err) => res.status(400).json(err));
+  // },
   create(req, res) {
-    console.log("hello i am alive.. here i make the stuff");
-    Category.create(req.body)
-      .then((category) => res.json(category))
+    console.log("hello i am alive.. here i make the cat stuff");
+    const category = {
+      category: req.body.category,
+    };
+    Category.create(category)
+      .then((category) => {
+        res.json({ category });
+      })
       .catch((err) => res.status(400).json(err));
   },
 
   // READ: Get all Authors
   getAll(req, res) {
-    console.log("hello i am alive.. here i give you the stuffs");
+    console.log("hello i am alive.. here i give you the cat stuffs");
     // Blank .find param gets all
     Category.find()
       .then((allCats) => res.json({ categories: allCats }))
@@ -65,6 +77,16 @@ module.exports = {
     console.log("hello i am alive.. here i delete the one thing");
     Category.findByIdAndDelete(req.params.id)
       .then((deletedCat) => res.json(deletedCat))
+      .catch((err) => res.status(400).json(err));
+  },
+
+  addProduct(req, res) {
+    Category.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $push: { products: req.params.product } },
+      { new: true }
+    )
+      .then((r) => res.json(r))
       .catch((err) => res.status(400).json(err));
   },
 };
