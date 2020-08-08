@@ -12,3 +12,7 @@ module.exports = (app) => {
 
 // Format:
 // app.MONGOOSE_FUNCTION("ROUTE", CONTROLLER_FUNCTION)
+
+const a = (function () {
+  return parseInt("1.5");
+})();

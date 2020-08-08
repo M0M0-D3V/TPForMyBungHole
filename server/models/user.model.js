@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 var uniqueValidator = require("mongoose-unique-validator");
 const bcrypt = require("bcrypt");
+const Schema = mongoose.Schema;
 
 const UserSchema = new mongoose.Schema(
   {
@@ -15,6 +16,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, "Email is required"],
       unique: [true, "email must be unique"],
+      validate: {
+        validator: (val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
+        message: "Please enter a valid email",
+      },
     },
     password: {
       type: String,
@@ -23,8 +28,14 @@ const UserSchema = new mongoose.Schema(
     },
     categories: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Category",
+      },
+    ],
+    purchaseHistory: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "PurchaseHistory",
       },
     ],
   },
