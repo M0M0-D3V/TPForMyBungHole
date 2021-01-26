@@ -8,6 +8,7 @@ module.exports = (app) => {
   app.get("/api/category/:id", categoryController.getOne);
   app.put("/api/category/:id", categoryController.update);
   app.delete("/api/category/:id", categoryController.delete);
+  app.put("/api/product/:id", categoryController.addProduct);
 };
 
 // Format:

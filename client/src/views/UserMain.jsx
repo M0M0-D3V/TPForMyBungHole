@@ -5,10 +5,9 @@ import LogOut from "../components/LogOut";
 import axios from "axios";
 import cornholio from "../img/cornholio.png";
 
-export default (props) => {
+export default ({ user, setUser }) => {
   // const [view, setView] = useState(0);
   // const [modalShow, setModalShow] = useState(false);
-  const [user, setUser] = useState([]);
   const [isUser, setIsUser] = useState(false);
   const [errors, setErrors] = useState([]);
   const [products, setProducts] = useState([]);
@@ -23,9 +22,9 @@ export default (props) => {
         withCredentials: true,
       })
       .then((res) => {
+        console.log(res.data);
         setUser(res.data);
         setIsUser(true);
-        navigate("/");
       })
       .catch((err) => {
         console.log("not authorized");
@@ -36,6 +35,7 @@ export default (props) => {
 
   const clickTP = (e) => {
     e.preventDefault();
+    navigate("/buytp");
   };
 
   return (
