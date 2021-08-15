@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 var uniqueValidator = require("mongoose-unique-validator");
 const bcrypt = require("bcrypt");
+const Schema = mongoose.Schema;
 
 const UserSchema = new mongoose.Schema(
   {
@@ -15,12 +16,28 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, "Email is required"],
       unique: [true, "email must be unique"],
+      validate: {
+        validator: (val) => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
+        message: "Please enter a valid email",
+      },
     },
     password: {
       type: String,
       required: [true, "Password is required"],
       minlength: [8, "Password must be 8 characters or longer"],
     },
+    categories: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Category",
+      },
+    ],
+    purchaseHistory: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "PurchaseHistory",
+      },
+    ],
   },
   { timestamps: true }
 );
@@ -45,6 +62,4 @@ UserSchema.pre("save", function (next) {
 // applying plugin to validate uniqueness
 UserSchema.plugin(uniqueValidator);
 
-const User = mongoose.model("User", UserSchema);
-
-module.exports = User;
+module.exports.User = mongoose.model("User", UserSchema);
