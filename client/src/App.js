@@ -10,6 +10,7 @@ import BuyTP from "./views/BuyTP";
 
 function App() {
   // user use state
+  // testing something
   const [user, setUser] = useState([]);
   const [isUser, setIsUser] = useState(false);
 
