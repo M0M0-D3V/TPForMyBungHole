@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.container}>
         <Image source={cornholio} style={styles.cornholio} />
         
-        <Button
+        <Button style={styles.bungBtn}
           title="BUNGHOLIO"
           onPress={bungPresser}
         />
