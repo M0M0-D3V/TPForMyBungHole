@@ -5,8 +5,8 @@ import { View, Text, TextInput } from 'react-native';
 const OneBung = () => {
 
   const [title, onChangeTitle] = useState("BUNG1");
-  const [price, onChangePrice] = useState(0);
-  const [qty, onChangeQty] = useState(0);
+  const [price, onChangePrice] = useState("");
+  const [qty, onChangeQty] = useState("");
 
   const calc = () => {
     return (price / qty).toFixed(2)

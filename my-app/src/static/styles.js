@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
-    padding: 50,
+    justifyContent: "flex-start",
+    paddingTop: 150,
   },
   bungBtn: {
     backgroundColor: "#4ECDC4",
@@ -29,6 +29,9 @@ const styles = StyleSheet.create({
     borderColor: "#1A535C",
     textAlign: "right",
     color: "#1A535C",
+  },
+  scrollBung: {
+    backgroundColor: "#F7FFF7",
   },
   bungContainer: {
     flex: 1,
