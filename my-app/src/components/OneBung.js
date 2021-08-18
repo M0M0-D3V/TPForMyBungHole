@@ -4,8 +4,9 @@ import { View, Text, TextInput } from 'react-native';
 
 const OneBung = () => {
 
-  const [price, onChangePrice] = useState(null);
-  const [qty, onChangeQty] = useState(null);
+  const [title, onChangeTitle] = useState("BUNG1");
+  const [price, onChangePrice] = useState(0);
+  const [qty, onChangeQty] = useState(0);
 
   const calc = () => {
     return (price / qty).toFixed(2)
@@ -13,7 +14,15 @@ const OneBung = () => {
 
   return (
     <View style={styles.bung}>
-      <Text style={styles.bungText}>Description</Text>
+      <View style={styles.bungRow}>
+        <Text style={styles.bungTitle}>Brand</Text>
+        <TextInput
+            style={styles.input}
+            onChangeText={onChangeTitle}
+            value={title}
+            // placeholder="Enter price"
+          />
+      </View>
       <View style={styles.bungRow}>
         <Text style={styles.bungText}>Price $:</Text>
         <TextInput
@@ -34,7 +43,10 @@ const OneBung = () => {
           placeholder="Enter qty"
         />
       </View>
-      <Text style={styles.bungText}>$/#: {price && qty ? calc() : price}</Text>
+      <View style={styles.bungRow}>
+        <Text style={styles.bungText}>$/#:</Text>
+        <Text style={styles.bungCalc}>{price && qty ? calc() : price}</Text>
+      </View>
     </View>
   );
 };

@@ -15,6 +15,7 @@ const HomeScreen = ({ navigation }) => {
         <Button style={styles.bungBtn}
           title="BUNGHOLIO"
           onPress={bungPresser}
+          color="#4ECDC4"
         />
       </View>
     );
