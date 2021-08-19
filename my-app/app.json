@@ -4,9 +4,9 @@
     "slug": "tp-for-my-bunghole",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/tp.png",
+    "icon": "./assets/tp-180-yellowbg.png",
     "splash": {
-      "image": "./assets/cornholio.png",
+      "image": "./assets/cornholio-whitebg.png",
       "resizeMode": "contain",
       "backgroundColor": "#1A535C"
     },
@@ -23,14 +23,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/tp.png",
+        "foregroundImage": "./assets/tp-180-yellowbg.png",
         "backgroundColor": "#FFE66D"
       },
       "package": "dev.m0m0ch4n.tpbunghole",
       "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/tp.png"
+      "favicon": "./assets/tp-180-yellowbg.png"
     },
     "description": "personal project"
   }
