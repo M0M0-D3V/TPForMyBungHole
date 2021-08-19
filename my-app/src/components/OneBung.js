@@ -4,7 +4,7 @@ import { View, Text, TextInput } from 'react-native';
 
 const OneBung = () => {
 
-  const [title, onChangeTitle] = useState("BUNG1");
+  const [title, onChangeTitle] = useState("");
   const [price, onChangePrice] = useState("");
   const [qty, onChangeQty] = useState("");
 
@@ -20,7 +20,7 @@ const OneBung = () => {
             style={styles.input}
             onChangeText={onChangeTitle}
             value={title}
-            // placeholder="Enter price"
+            placeholder="BUNG1"
           />
       </View>
       <View style={styles.bungRow}>
