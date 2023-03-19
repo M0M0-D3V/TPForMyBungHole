@@ -16,10 +16,10 @@ const BungScreen = ({ navigation, route }) => {
       <View style={styles.bungContainer}>
         {bungs && bungs.map((bung, id) =>
           <OneBung key={id} />
-        )}
+          )}
         <Pressable onPress={addBung}>
-          <View style={styles.bung}>
-            <Text style={styles.bungText}>Add Bung</Text>
+          <View style={styles.add}>
+          <Text style={styles.bungText}>+</Text>
           </View>
         </Pressable>
       </View>
