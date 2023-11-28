@@ -15,6 +15,7 @@
     "expo-firebase": "^0.0.0-alpha.0",
     "expo-sqlite": "~11.3.3",
     "expo-status-bar": "~1.6.0",
+    "firebase": "^10.7.0",
     "react": "18.2.0",
     "react-bootstrap": "^1.6.1",
     "react-dom": "18.2.0",
