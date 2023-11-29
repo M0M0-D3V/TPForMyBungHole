@@ -1,15 +1,13 @@
 import React from "react";
 import "react-native-gesture-handler";
 import firebase from "firebase/app";
-import "firebase/database";
 import { firebaseConfig } from "./firebaseConfig";
+import "firebase/database";
+import "firebase/auth";
 // Optionally import the services that you want to use
-// import {...} from "firebase/auth";
-// import {...} from "firebase/database";
 // import {...} from "firebase/firestore";
 // import {...} from "firebase/functions";
 // import {...} from "firebase/storage";
-// import firebase from "expo-firebase-app";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./src/screens/HomeScreen";
